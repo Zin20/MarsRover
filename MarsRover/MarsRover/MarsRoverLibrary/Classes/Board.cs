@@ -35,7 +35,7 @@ namespace MarsRoverLibrary.Classes
 
         private Dictionary<Tuple<int, int>, IVehicle> board;
 
-        public Board(int xSize = 1, int ySize = 1)
+        public Board(int xSize = 0, int ySize = 0)
         {
             this.xSize = xSize;
             this.ySize = ySize;
@@ -91,7 +91,7 @@ namespace MarsRoverLibrary.Classes
 
         private bool ValidateSize(int value)
         {
-            return value > 0;
+            return value >= 0;
         }
 
         private bool ValidateCords(int xCord, int yCord)

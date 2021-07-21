@@ -18,11 +18,17 @@ namespace MarsRoverTests
         }
 
         [Test]
-        public void Board_ConstructorInvalidSize([Values(-1,0)]int xSize, [Values(-1, 0)] int ySize)
+        public void Board_ConstructorInvalidSize([Values(-2, -1)]int xSize, [Values(-2, -1)] int ySize)
         { 
             Assert.Throws<ArgumentException>(() => testBoard = new Board(xSize, ySize));
         }
 
+        [Test]
+        public void Board_Constructor_CreateBoardSizeOfOneCell()
+        {
+            testBoard = new Board(0, 0);
+            Assert.Null(testBoard.GetVehicleAtCords(0, 0));
+        }
         [Test]
         public void Board_GetNoVehicleAtCords()
         {
