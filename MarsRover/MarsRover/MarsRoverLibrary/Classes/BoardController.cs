@@ -89,7 +89,6 @@ namespace MarsRoverLibrary.Classes
             }
         }
 
-      
         private void ProcessRotationCommand(IVehicle currentVehicle, char currentMovementCommand)
         {
             currentVehicle.ChangeDirection(currentMovementCommand);
